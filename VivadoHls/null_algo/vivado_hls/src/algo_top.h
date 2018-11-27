@@ -1,0 +1,43 @@
+#ifndef ALGO_TOP_H
+#define ALGO_TOP_H
+
+
+#include <ap_int.h>
+#include <hls_stream.h>
+
+typedef  struct strmWord {
+	ap_uint<64> data;
+	ap_uint<1> last;
+} strmWord;
+
+//#define N_CYC_MAX 6
+
+
+void algo_top(
+		hls::stream<strmWord> & link_in_00, hls::stream<strmWord> & link_in_01, hls::stream<strmWord> & link_in_02, hls::stream<strmWord> & link_in_03,
+		hls::stream<strmWord> & link_in_04, hls::stream<strmWord> & link_in_05, hls::stream<strmWord> & link_in_06, hls::stream<strmWord> & link_in_07,
+		hls::stream<strmWord> & link_in_08, hls::stream<strmWord> & link_in_09, hls::stream<strmWord> & link_in_10, hls::stream<strmWord> & link_in_11,
+		hls::stream<strmWord> & link_in_12, hls::stream<strmWord> & link_in_13, hls::stream<strmWord> & link_in_14, hls::stream<strmWord> & link_in_15,
+		hls::stream<strmWord> & link_in_16, hls::stream<strmWord> & link_in_17, hls::stream<strmWord> & link_in_18, hls::stream<strmWord> & link_in_19,
+		hls::stream<strmWord> & link_in_20, hls::stream<strmWord> & link_in_21, hls::stream<strmWord> & link_in_22, hls::stream<strmWord> & link_in_23,
+		hls::stream<strmWord> & link_in_24, hls::stream<strmWord> & link_in_25, hls::stream<strmWord> & link_in_26, hls::stream<strmWord> & link_in_27,
+		hls::stream<strmWord> & link_in_28, hls::stream<strmWord> & link_in_29, hls::stream<strmWord> & link_in_30, hls::stream<strmWord> & link_in_31,
+		hls::stream<strmWord> & link_in_32, hls::stream<strmWord> & link_in_33, hls::stream<strmWord> & link_in_34, hls::stream<strmWord> & link_in_35,
+		hls::stream<strmWord> & link_in_36, hls::stream<strmWord> & link_in_37, hls::stream<strmWord> & link_in_38, hls::stream<strmWord> & link_in_39,
+		hls::stream<strmWord> & link_in_40, hls::stream<strmWord> & link_in_41, hls::stream<strmWord> & link_in_42, hls::stream<strmWord> & link_in_43,
+		hls::stream<strmWord> & link_in_44, hls::stream<strmWord> & link_in_45, hls::stream<strmWord> & link_in_46, hls::stream<strmWord> & link_in_47,
+
+		hls::stream<strmWord> & link_out_00, hls::stream<strmWord> & link_out_01, hls::stream<strmWord> & link_out_02, hls::stream<strmWord> & link_out_03,
+		hls::stream<strmWord> & link_out_04, hls::stream<strmWord> & link_out_05, hls::stream<strmWord> & link_out_06, hls::stream<strmWord> & link_out_07,
+		hls::stream<strmWord> & link_out_08, hls::stream<strmWord> & link_out_09, hls::stream<strmWord> & link_out_10, hls::stream<strmWord> & link_out_11,
+		hls::stream<strmWord> & link_out_12, hls::stream<strmWord> & link_out_13, hls::stream<strmWord> & link_out_14, hls::stream<strmWord> & link_out_15,
+		hls::stream<strmWord> & link_out_16, hls::stream<strmWord> & link_out_17, hls::stream<strmWord> & link_out_18, hls::stream<strmWord> & link_out_19,
+		hls::stream<strmWord> & link_out_20, hls::stream<strmWord> & link_out_21, hls::stream<strmWord> & link_out_22, hls::stream<strmWord> & link_out_23,
+		hls::stream<strmWord> & link_out_24, hls::stream<strmWord> & link_out_25, hls::stream<strmWord> & link_out_26, hls::stream<strmWord> & link_out_27,
+		hls::stream<strmWord> & link_out_28, hls::stream<strmWord> & link_out_29, hls::stream<strmWord> & link_out_30, hls::stream<strmWord> & link_out_31,
+		hls::stream<strmWord> & link_out_32, hls::stream<strmWord> & link_out_33, hls::stream<strmWord> & link_out_34, hls::stream<strmWord> & link_out_35,
+		hls::stream<strmWord> & link_out_36, hls::stream<strmWord> & link_out_37, hls::stream<strmWord> & link_out_38, hls::stream<strmWord> & link_out_39,
+		hls::stream<strmWord> & link_out_40, hls::stream<strmWord> & link_out_41, hls::stream<strmWord> & link_out_42, hls::stream<strmWord> & link_out_43,
+		hls::stream<strmWord> & link_out_44, hls::stream<strmWord> & link_out_45, hls::stream<strmWord> & link_out_46, hls::stream<strmWord> & link_out_47);
+
+#endif
