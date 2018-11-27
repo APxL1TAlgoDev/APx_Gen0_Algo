@@ -52,7 +52,7 @@ git-lfs/2.1.1
 $ git clone --recursive git@github.com:APxL1TAlgoDev/APx_Gen0_Algo.git
 ```
 
-# How to build HLS project using Rukcus 
+# How to build HLS project using Ruckus
 
 1) Setup Xilinx tools 
 
