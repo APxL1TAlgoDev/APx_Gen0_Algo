@@ -69,7 +69,7 @@ void algo_top(
 {
 
 	static ap_uint<2> cycle_algo = 0;
-	static ap_uint<2> cycle_in[N_CH_IN] = {0};
+	static ap_uint<2> cycle_in[N_CH_IN+N_CH_OUT+1] = {0};
 	static ap_uint<2> cycle_out[N_CH_OUT] = {0};
 
 	static bool out_ready_S1 = false;
@@ -152,13 +152,13 @@ void algo_top(
 	link_in_deser(link_in_47, link_in[47], cycle_in[47]);
 
 
-	if (cycle_algo == 2) {
+	if (cycle_in[48+48] == 2) {
 		out_ready_S1 = true;
 
 		algo_unpacked(link_in, link_out_buf);
 	}
 
-	if (cycle_algo == 0) {
+	if (cycle_in[48+48] == 0) {
 
 		if (out_ready_S1 == true)
 				out_ready_S2 = true;
@@ -177,58 +177,58 @@ void algo_top(
 
 	if (out_ready_S2 == true)
 	{
-		link_out_ser(link_out_00, link_out[0], cycle_out[0]);
-		link_out_ser(link_out_01, link_out[1], cycle_out[1]);
-		link_out_ser(link_out_02, link_out[2], cycle_out[2]);
-		link_out_ser(link_out_03, link_out[3], cycle_out[3]);
-		link_out_ser(link_out_04, link_out[4], cycle_out[4]);
-		link_out_ser(link_out_05, link_out[5], cycle_out[5]);
-		link_out_ser(link_out_06, link_out[6], cycle_out[6]);
-		link_out_ser(link_out_07, link_out[7], cycle_out[7]);
-		link_out_ser(link_out_08, link_out[8], cycle_out[8]);
-		link_out_ser(link_out_09, link_out[9], cycle_out[9]);
+		link_out_ser(link_out_00, link_out[0], cycle_in[48+0]);
+		link_out_ser(link_out_01, link_out[1], cycle_in[48+1]);
+		link_out_ser(link_out_02, link_out[2], cycle_in[48+2]);
+		link_out_ser(link_out_03, link_out[3], cycle_in[48+3]);
+		link_out_ser(link_out_04, link_out[4], cycle_in[48+4]);
+		link_out_ser(link_out_05, link_out[5], cycle_in[48+5]);
+		link_out_ser(link_out_06, link_out[6], cycle_in[48+6]);
+		link_out_ser(link_out_07, link_out[7], cycle_in[48+7]);
+		link_out_ser(link_out_08, link_out[8], cycle_in[48+8]);
+		link_out_ser(link_out_09, link_out[9], cycle_in[48+9]);
 
-		link_out_ser(link_out_10, link_out[10], cycle_out[10]);
-		link_out_ser(link_out_11, link_out[11], cycle_out[11]);
-		link_out_ser(link_out_12, link_out[12], cycle_out[12]);
-		link_out_ser(link_out_13, link_out[13], cycle_out[13]);
-		link_out_ser(link_out_14, link_out[14], cycle_out[14]);
-		link_out_ser(link_out_15, link_out[15], cycle_out[15]);
-		link_out_ser(link_out_16, link_out[16], cycle_out[16]);
-		link_out_ser(link_out_17, link_out[17], cycle_out[17]);
-		link_out_ser(link_out_18, link_out[18], cycle_out[18]);
-		link_out_ser(link_out_19, link_out[19], cycle_out[19]);
+		link_out_ser(link_out_10, link_out[10], cycle_in[48+10]);
+		link_out_ser(link_out_11, link_out[11], cycle_in[48+11]);
+		link_out_ser(link_out_12, link_out[12], cycle_in[48+12]);
+		link_out_ser(link_out_13, link_out[13], cycle_in[48+13]);
+		link_out_ser(link_out_14, link_out[14], cycle_in[48+14]);
+		link_out_ser(link_out_15, link_out[15], cycle_in[48+15]);
+		link_out_ser(link_out_16, link_out[16], cycle_in[48+16]);
+		link_out_ser(link_out_17, link_out[17], cycle_in[48+17]);
+		link_out_ser(link_out_18, link_out[18], cycle_in[48+18]);
+		link_out_ser(link_out_19, link_out[19], cycle_in[48+19]);
 
-		link_out_ser(link_out_20, link_out[20], cycle_out[20]);
-		link_out_ser(link_out_21, link_out[21], cycle_out[21]);
-		link_out_ser(link_out_22, link_out[22], cycle_out[22]);
-		link_out_ser(link_out_23, link_out[23], cycle_out[23]);
-		link_out_ser(link_out_24, link_out[24], cycle_out[24]);
-		link_out_ser(link_out_25, link_out[25], cycle_out[25]);
-		link_out_ser(link_out_26, link_out[26], cycle_out[26]);
-		link_out_ser(link_out_27, link_out[27], cycle_out[27]);
-		link_out_ser(link_out_28, link_out[28], cycle_out[28]);
-		link_out_ser(link_out_29, link_out[29], cycle_out[29]);
+		link_out_ser(link_out_20, link_out[20], cycle_in[48+20]);
+		link_out_ser(link_out_21, link_out[21], cycle_in[48+21]);
+		link_out_ser(link_out_22, link_out[22], cycle_in[48+22]);
+		link_out_ser(link_out_23, link_out[23], cycle_in[48+23]);
+		link_out_ser(link_out_24, link_out[24], cycle_in[48+24]);
+		link_out_ser(link_out_25, link_out[25], cycle_in[48+25]);
+		link_out_ser(link_out_26, link_out[26], cycle_in[48+26]);
+		link_out_ser(link_out_27, link_out[27], cycle_in[48+27]);
+		link_out_ser(link_out_28, link_out[28], cycle_in[48+28]);
+		link_out_ser(link_out_29, link_out[29], cycle_in[48+29]);
 
-		link_out_ser(link_out_30, link_out[30], cycle_out[30]);
-		link_out_ser(link_out_31, link_out[31], cycle_out[31]);
-		link_out_ser(link_out_32, link_out[32], cycle_out[32]);
-		link_out_ser(link_out_33, link_out[33], cycle_out[33]);
-		link_out_ser(link_out_34, link_out[34], cycle_out[34]);
-		link_out_ser(link_out_35, link_out[35], cycle_out[35]);
-		link_out_ser(link_out_36, link_out[36], cycle_out[36]);
-		link_out_ser(link_out_37, link_out[37], cycle_out[37]);
-		link_out_ser(link_out_38, link_out[38], cycle_out[38]);
-		link_out_ser(link_out_39, link_out[39], cycle_out[39]);
+		link_out_ser(link_out_30, link_out[30], cycle_in[48+30]);
+		link_out_ser(link_out_31, link_out[31], cycle_in[48+31]);
+		link_out_ser(link_out_32, link_out[32], cycle_in[48+32]);
+		link_out_ser(link_out_33, link_out[33], cycle_in[48+33]);
+		link_out_ser(link_out_34, link_out[34], cycle_in[48+34]);
+		link_out_ser(link_out_35, link_out[35], cycle_in[48+35]);
+		link_out_ser(link_out_36, link_out[36], cycle_in[48+36]);
+		link_out_ser(link_out_37, link_out[37], cycle_in[48+37]);
+		link_out_ser(link_out_38, link_out[38], cycle_in[48+38]);
+		link_out_ser(link_out_39, link_out[39], cycle_in[48+39]);
 
-		link_out_ser(link_out_40, link_out[40], cycle_out[40]);
-		link_out_ser(link_out_41, link_out[41], cycle_out[41]);
-		link_out_ser(link_out_42, link_out[42], cycle_out[42]);
-		link_out_ser(link_out_43, link_out[43], cycle_out[43]);
-		link_out_ser(link_out_44, link_out[44], cycle_out[44]);
-		link_out_ser(link_out_45, link_out[45], cycle_out[45]);
-		link_out_ser(link_out_46, link_out[46], cycle_out[46]);
-		link_out_ser(link_out_47, link_out[47], cycle_out[47]);
+		link_out_ser(link_out_40, link_out[40], cycle_in[48+40]);
+		link_out_ser(link_out_41, link_out[41], cycle_in[48+41]);
+		link_out_ser(link_out_42, link_out[42], cycle_in[48+42]);
+		link_out_ser(link_out_43, link_out[43], cycle_in[48+43]);
+		link_out_ser(link_out_44, link_out[44], cycle_in[48+44]);
+		link_out_ser(link_out_45, link_out[45], cycle_in[48+45]);
+		link_out_ser(link_out_46, link_out[46], cycle_in[48+46]);
+		link_out_ser(link_out_47, link_out[47], cycle_in[48+47]);
 	}
 
 	if (cycle_algo >= 2)
@@ -236,7 +236,7 @@ void algo_top(
 	else
 		cycle_algo++;
 
-	for (int idx = 0; idx < N_CH_IN; idx++) {
+	for (int idx = 0; idx < (N_CH_IN+N_CH_OUT+1); idx++) {
 #pragma HLS UNROLL
 		if (cycle_in[idx] >= 2)
 			cycle_in[idx] = 0;
