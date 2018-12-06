@@ -1,6 +1,8 @@
 set_directive_pipeline -II 1 "algo_top"
 set_directive_unroll "algo_top"
 
+config_interface -register_io scalar_in	
+
 set_directive_interface -mode axis  -register_mode  off -name link_in_00 "algo_top" link_in_00
 set_directive_interface -mode axis  -register_mode  off -name link_in_01 "algo_top" link_in_01
 set_directive_interface -mode axis  -register_mode  off -name link_in_02 "algo_top" link_in_02
