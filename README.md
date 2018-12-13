@@ -36,7 +36,6 @@ git lfs install
 
 ```
 git version
-git version 2.13.0
 ```
 
 3) Verify that you have git-lfs version 2.1.1 (or later) installed 
@@ -71,14 +70,14 @@ make clean # To remove remants from the previous build
 make ARGV="<test_vector>" # i.e. make ARGV="test1"
 # Compile post-synth checkpoint (to be integrated in final bitile)
 make ARGV="<test_vector>" dcp  # i.e. make ARGV="test1" dcp
+```
 
-# To add a new test vector set, please make <test_vector>_inp.txt and 
-# <test_vector>_out_ref.txt  file in the data directory, and add it to 
-# the sources.tcl
+To add a new test vector set, please make <test_vector>_inp.txt and <test_vector>_out_ref.txt  file in the data directory, and add it to the sources.tcl
 
-# You can skip default output checks by passing a second parameter (skipOutRefCmp) into simulation
-# make ARGV="<test_vector> skipOutRefCmp" 
+You can skip default output checks by passing a second parameter (skipOutRefCmp) into simulation
 
+```
+make ARGV="<test_vector> skipOutRefCmp" 
 ```
 
 3) Optional: After a build completes, review the results in Vivado HLS GUI mode
