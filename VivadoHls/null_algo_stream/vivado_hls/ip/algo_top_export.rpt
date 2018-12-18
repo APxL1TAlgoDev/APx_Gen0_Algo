@@ -1,19 +1,19 @@
 
 
 Implementation tool: Xilinx Vivado v.2018.2
-Project:             null_algo_project
+Project:             null_algo_stream_project
 Solution:            solution1
 Device target:       xc7vx690tffg1927-2
-Report date:         Tue Nov 27 16:47:53 CET 2018
+Report date:         Tue Dec 18 15:58:51 CET 2018
 
 #=== Post-Synthesis Resource usage ===
 SLICE:            0
-LUT:           8177
-FF:           28017
+LUT:           3695
+FF:            6673
 DSP:              0
 BRAM:             0
 SRL:              0
 #=== Final timing ===
 CP required:    8.333
-CP achieved post-synthesis:    3.453
+CP achieved post-synthesis:    3.498
 Timing met

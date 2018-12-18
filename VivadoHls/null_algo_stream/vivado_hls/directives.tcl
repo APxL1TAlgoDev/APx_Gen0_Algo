@@ -110,7 +110,3 @@ set_directive_interface -mode axis  -register_mode  off -name link_out_45 "algo_
 set_directive_interface -mode axis  -register_mode  off -name link_out_46 "algo_top" link_out_46
 set_directive_interface -mode axis  -register_mode  off -name link_out_47 "algo_top" link_out_47
 
-set_directive_array_partition -type complete -dim 0 "algo_top" link_in
-set_directive_array_partition -type complete -dim 0 "algo_top" link_out
-set_directive_array_partition -type complete -dim 0 "algo_top" link_out_buf
-

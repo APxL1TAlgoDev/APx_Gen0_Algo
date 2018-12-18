@@ -3,7 +3,6 @@ open_project -reset proj
 set_top algo_top
 
 add_files src/algo_top.cpp
-add_files src/algo_unpacked.cpp
 add_files -tb src/algo_top_tb.cpp 
 add_files -tb data/test1_inp.txt
 add_files -tb data/test1_out_ref.txt

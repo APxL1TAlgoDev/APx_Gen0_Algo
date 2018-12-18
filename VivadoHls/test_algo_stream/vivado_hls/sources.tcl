@@ -3,7 +3,6 @@ set_top algo_top
 ##
 #### Add source code
 add_files ${PROJ_DIR}/src/algo_top.cpp
-add_files ${PROJ_DIR}/src/algo_unpacked.cpp
 #
 ### Add testbed files
 add_files -tb ${PROJ_DIR}/src/algo_top_tb.cpp -cflags ${CFLAGS}
