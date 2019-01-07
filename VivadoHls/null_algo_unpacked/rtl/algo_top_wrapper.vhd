@@ -336,6 +336,9 @@ architecture rtl of algo_top_wrapper is
   signal ap_done_unp  : std_logic;
   signal ap_idle_unp  : std_logic;
   signal ap_ready_unp : std_logic;
+  
+    signal ap_done_latched  : std_logic;
+
 
   signal link_in_0 : t_slv_64_arr(47 downto 0);
   signal link_in_1 : t_slv_64_arr(47 downto 0);
@@ -349,6 +352,7 @@ architecture rtl of algo_top_wrapper is
   signal out_cyc : t_cyc_3_arr(47 downto 0);
 
 begin
+
 
   gen_cyc : for idx in 0 to 47 generate
     process(ap_clk) is
@@ -367,8 +371,14 @@ begin
             in_cyc(idx) <= 0;
           end if;
         end if;
+        
+        if (ap_rst_d2 = '1' ) then
+           ap_done_latched <= '0';
+        elsif (ap_done_unp = '1') then
+            ap_done_latched <= '1';
+        end if;
 
-        if (ap_rst_d2 = '1' or ap_done_unp = '0') then
+        if (ap_done_latched = '0') then
           out_cyc(idx)                <= 0;
           link_out_master(idx).tvalid <= '0';
         else
