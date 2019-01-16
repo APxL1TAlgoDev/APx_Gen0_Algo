@@ -11,3 +11,5 @@ add_files -tb src/algo_unpacked_tb.cpp
 add_files -tb data/test1_inp.txt
 add_files -tb data/test1_out_ref.txt
 
+add_files -tb data/rnd_inp.txt
+add_files -tb data/rnd_out_ref.txt

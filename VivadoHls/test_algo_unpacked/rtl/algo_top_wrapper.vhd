@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
+use ieee.numeric_std.all;
 
 use work.algo_pkg.all;
 
@@ -26,309 +27,172 @@ end algo_top_wrapper;
 architecture rtl of algo_top_wrapper is
 
   type t_cyc_3_arr is array(integer range <>) of integer range 0 to 2;
-  type t_slv_64_arr is array(integer range <>) of std_logic_vector(63 downto 0);
+  type t_slv_192_arr is array(integer range <>) of std_logic_vector(191 downto 0);
 
   component algo_unpacked
     port (
-      ap_clk             : in  std_logic;
-      ap_rst             : in  std_logic;
-      ap_start           : in  std_logic;
-      ap_done            : out std_logic;
-      ap_idle            : out std_logic;
-      ap_ready           : out std_logic;
-      link_in_2d_0_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_0_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_0_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_1_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_1_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_1_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_2_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_2_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_2_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_3_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_3_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_3_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_4_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_4_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_4_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_5_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_5_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_5_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_6_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_6_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_6_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_7_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_7_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_7_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_8_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_8_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_8_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_9_0_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_9_1_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_9_2_V   : in  std_logic_vector (63 downto 0);
-      link_in_2d_10_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_10_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_10_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_11_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_11_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_11_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_12_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_12_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_12_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_13_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_13_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_13_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_14_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_14_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_14_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_15_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_15_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_15_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_16_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_16_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_16_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_17_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_17_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_17_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_18_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_18_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_18_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_19_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_19_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_19_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_20_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_20_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_20_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_21_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_21_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_21_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_22_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_22_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_22_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_23_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_23_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_23_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_24_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_24_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_24_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_25_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_25_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_25_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_26_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_26_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_26_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_27_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_27_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_27_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_28_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_28_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_28_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_29_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_29_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_29_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_30_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_30_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_30_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_31_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_31_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_31_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_32_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_32_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_32_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_33_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_33_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_33_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_34_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_34_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_34_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_35_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_35_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_35_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_36_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_36_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_36_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_37_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_37_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_37_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_38_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_38_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_38_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_39_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_39_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_39_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_40_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_40_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_40_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_41_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_41_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_41_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_42_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_42_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_42_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_43_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_43_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_43_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_44_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_44_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_44_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_45_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_45_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_45_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_46_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_46_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_46_2_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_47_0_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_47_1_V  : in  std_logic_vector (63 downto 0);
-      link_in_2d_47_2_V  : in  std_logic_vector (63 downto 0);
-      link_out_2d_0_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_0_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_0_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_1_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_1_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_1_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_2_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_2_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_2_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_3_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_3_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_3_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_4_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_4_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_4_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_5_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_5_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_5_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_6_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_6_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_6_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_7_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_7_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_7_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_8_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_8_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_8_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_9_0_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_9_1_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_9_2_V  : out std_logic_vector (63 downto 0);
-      link_out_2d_10_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_10_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_10_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_11_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_11_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_11_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_12_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_12_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_12_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_13_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_13_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_13_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_14_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_14_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_14_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_15_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_15_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_15_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_16_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_16_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_16_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_17_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_17_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_17_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_18_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_18_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_18_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_19_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_19_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_19_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_20_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_20_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_20_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_21_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_21_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_21_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_22_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_22_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_22_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_23_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_23_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_23_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_24_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_24_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_24_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_25_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_25_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_25_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_26_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_26_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_26_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_27_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_27_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_27_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_28_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_28_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_28_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_29_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_29_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_29_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_30_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_30_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_30_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_31_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_31_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_31_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_32_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_32_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_32_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_33_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_33_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_33_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_34_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_34_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_34_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_35_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_35_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_35_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_36_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_36_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_36_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_37_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_37_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_37_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_38_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_38_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_38_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_39_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_39_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_39_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_40_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_40_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_40_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_41_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_41_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_41_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_42_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_42_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_42_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_43_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_43_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_43_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_44_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_44_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_44_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_45_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_45_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_45_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_46_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_46_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_46_2_V : out std_logic_vector (63 downto 0);
-      link_out_2d_47_0_V : out std_logic_vector (63 downto 0);
-      link_out_2d_47_1_V : out std_logic_vector (63 downto 0);
-      link_out_2d_47_2_V : out std_logic_vector (63 downto 0));
+      ap_clk   : in  std_logic;
+      ap_rst   : in  std_logic;
+      ap_start : in  std_logic;
+      ap_done  : out std_logic;
+      ap_idle  : out std_logic;
+      ap_ready : out std_logic;
+
+      link_in_0_V  : in std_logic_vector (191 downto 0);
+      link_in_1_V  : in std_logic_vector (191 downto 0);
+      link_in_2_V  : in std_logic_vector (191 downto 0);
+      link_in_3_V  : in std_logic_vector (191 downto 0);
+      link_in_4_V  : in std_logic_vector (191 downto 0);
+      link_in_5_V  : in std_logic_vector (191 downto 0);
+      link_in_6_V  : in std_logic_vector (191 downto 0);
+      link_in_7_V  : in std_logic_vector (191 downto 0);
+      link_in_8_V  : in std_logic_vector (191 downto 0);
+      link_in_9_V  : in std_logic_vector (191 downto 0);
+      link_in_10_V : in std_logic_vector (191 downto 0);
+      link_in_11_V : in std_logic_vector (191 downto 0);
+      link_in_12_V : in std_logic_vector (191 downto 0);
+      link_in_13_V : in std_logic_vector (191 downto 0);
+      link_in_14_V : in std_logic_vector (191 downto 0);
+      link_in_15_V : in std_logic_vector (191 downto 0);
+      link_in_16_V : in std_logic_vector (191 downto 0);
+      link_in_17_V : in std_logic_vector (191 downto 0);
+      link_in_18_V : in std_logic_vector (191 downto 0);
+      link_in_19_V : in std_logic_vector (191 downto 0);
+      link_in_20_V : in std_logic_vector (191 downto 0);
+      link_in_21_V : in std_logic_vector (191 downto 0);
+      link_in_22_V : in std_logic_vector (191 downto 0);
+      link_in_23_V : in std_logic_vector (191 downto 0);
+      link_in_24_V : in std_logic_vector (191 downto 0);
+      link_in_25_V : in std_logic_vector (191 downto 0);
+      link_in_26_V : in std_logic_vector (191 downto 0);
+      link_in_27_V : in std_logic_vector (191 downto 0);
+      link_in_28_V : in std_logic_vector (191 downto 0);
+      link_in_29_V : in std_logic_vector (191 downto 0);
+      link_in_30_V : in std_logic_vector (191 downto 0);
+      link_in_31_V : in std_logic_vector (191 downto 0);
+      link_in_32_V : in std_logic_vector (191 downto 0);
+      link_in_33_V : in std_logic_vector (191 downto 0);
+      link_in_34_V : in std_logic_vector (191 downto 0);
+      link_in_35_V : in std_logic_vector (191 downto 0);
+      link_in_36_V : in std_logic_vector (191 downto 0);
+      link_in_37_V : in std_logic_vector (191 downto 0);
+      link_in_38_V : in std_logic_vector (191 downto 0);
+      link_in_39_V : in std_logic_vector (191 downto 0);
+      link_in_40_V : in std_logic_vector (191 downto 0);
+      link_in_41_V : in std_logic_vector (191 downto 0);
+      link_in_42_V : in std_logic_vector (191 downto 0);
+      link_in_43_V : in std_logic_vector (191 downto 0);
+      link_in_44_V : in std_logic_vector (191 downto 0);
+      link_in_45_V : in std_logic_vector (191 downto 0);
+      link_in_46_V : in std_logic_vector (191 downto 0);
+      link_in_47_V : in std_logic_vector (191 downto 0);
+
+      link_out_0_V  : out std_logic_vector (191 downto 0);
+      link_out_1_V  : out std_logic_vector (191 downto 0);
+      link_out_2_V  : out std_logic_vector (191 downto 0);
+      link_out_3_V  : out std_logic_vector (191 downto 0);
+      link_out_4_V  : out std_logic_vector (191 downto 0);
+      link_out_5_V  : out std_logic_vector (191 downto 0);
+      link_out_6_V  : out std_logic_vector (191 downto 0);
+      link_out_7_V  : out std_logic_vector (191 downto 0);
+      link_out_8_V  : out std_logic_vector (191 downto 0);
+      link_out_9_V  : out std_logic_vector (191 downto 0);
+      link_out_10_V : out std_logic_vector (191 downto 0);
+      link_out_11_V : out std_logic_vector (191 downto 0);
+      link_out_12_V : out std_logic_vector (191 downto 0);
+      link_out_13_V : out std_logic_vector (191 downto 0);
+      link_out_14_V : out std_logic_vector (191 downto 0);
+      link_out_15_V : out std_logic_vector (191 downto 0);
+      link_out_16_V : out std_logic_vector (191 downto 0);
+      link_out_17_V : out std_logic_vector (191 downto 0);
+      link_out_18_V : out std_logic_vector (191 downto 0);
+      link_out_19_V : out std_logic_vector (191 downto 0);
+      link_out_20_V : out std_logic_vector (191 downto 0);
+      link_out_21_V : out std_logic_vector (191 downto 0);
+      link_out_22_V : out std_logic_vector (191 downto 0);
+      link_out_23_V : out std_logic_vector (191 downto 0);
+      link_out_24_V : out std_logic_vector (191 downto 0);
+      link_out_25_V : out std_logic_vector (191 downto 0);
+      link_out_26_V : out std_logic_vector (191 downto 0);
+      link_out_27_V : out std_logic_vector (191 downto 0);
+      link_out_28_V : out std_logic_vector (191 downto 0);
+      link_out_29_V : out std_logic_vector (191 downto 0);
+      link_out_30_V : out std_logic_vector (191 downto 0);
+      link_out_31_V : out std_logic_vector (191 downto 0);
+      link_out_32_V : out std_logic_vector (191 downto 0);
+      link_out_33_V : out std_logic_vector (191 downto 0);
+      link_out_34_V : out std_logic_vector (191 downto 0);
+      link_out_35_V : out std_logic_vector (191 downto 0);
+      link_out_36_V : out std_logic_vector (191 downto 0);
+      link_out_37_V : out std_logic_vector (191 downto 0);
+      link_out_38_V : out std_logic_vector (191 downto 0);
+      link_out_39_V : out std_logic_vector (191 downto 0);
+      link_out_40_V : out std_logic_vector (191 downto 0);
+      link_out_41_V : out std_logic_vector (191 downto 0);
+      link_out_42_V : out std_logic_vector (191 downto 0);
+      link_out_43_V : out std_logic_vector (191 downto 0);
+      link_out_44_V : out std_logic_vector (191 downto 0);
+      link_out_45_V : out std_logic_vector (191 downto 0);
+      link_out_46_V : out std_logic_vector (191 downto 0);
+      link_out_47_V : out std_logic_vector (191 downto 0);
+
+      link_out_0_V_ap_vld  : out std_logic;
+      link_out_1_V_ap_vld  : out std_logic;
+      link_out_2_V_ap_vld  : out std_logic;
+      link_out_3_V_ap_vld  : out std_logic;
+      link_out_4_V_ap_vld  : out std_logic;
+      link_out_5_V_ap_vld  : out std_logic;
+      link_out_6_V_ap_vld  : out std_logic;
+      link_out_7_V_ap_vld  : out std_logic;
+      link_out_8_V_ap_vld  : out std_logic;
+      link_out_9_V_ap_vld  : out std_logic;
+      link_out_10_V_ap_vld : out std_logic;
+      link_out_11_V_ap_vld : out std_logic;
+      link_out_12_V_ap_vld : out std_logic;
+      link_out_13_V_ap_vld : out std_logic;
+      link_out_14_V_ap_vld : out std_logic;
+      link_out_15_V_ap_vld : out std_logic;
+      link_out_16_V_ap_vld : out std_logic;
+      link_out_17_V_ap_vld : out std_logic;
+      link_out_18_V_ap_vld : out std_logic;
+      link_out_19_V_ap_vld : out std_logic;
+      link_out_20_V_ap_vld : out std_logic;
+      link_out_21_V_ap_vld : out std_logic;
+      link_out_22_V_ap_vld : out std_logic;
+      link_out_23_V_ap_vld : out std_logic;
+      link_out_24_V_ap_vld : out std_logic;
+      link_out_25_V_ap_vld : out std_logic;
+      link_out_26_V_ap_vld : out std_logic;
+      link_out_27_V_ap_vld : out std_logic;
+      link_out_28_V_ap_vld : out std_logic;
+      link_out_29_V_ap_vld : out std_logic;
+      link_out_30_V_ap_vld : out std_logic;
+      link_out_31_V_ap_vld : out std_logic;
+      link_out_32_V_ap_vld : out std_logic;
+      link_out_33_V_ap_vld : out std_logic;
+      link_out_34_V_ap_vld : out std_logic;
+      link_out_35_V_ap_vld : out std_logic;
+      link_out_36_V_ap_vld : out std_logic;
+      link_out_37_V_ap_vld : out std_logic;
+      link_out_38_V_ap_vld : out std_logic;
+      link_out_39_V_ap_vld : out std_logic;
+      link_out_40_V_ap_vld : out std_logic;
+      link_out_41_V_ap_vld : out std_logic;
+      link_out_42_V_ap_vld : out std_logic;
+      link_out_43_V_ap_vld : out std_logic;
+      link_out_44_V_ap_vld : out std_logic;
+      link_out_45_V_ap_vld : out std_logic;
+      link_out_46_V_ap_vld : out std_logic;
+      link_out_47_V_ap_vld : out std_logic
+
+      );
   end component algo_unpacked;
 
   signal ap_rst_d1 : std_logic;
   signal ap_rst_d2 : std_logic;
   signal ap_rst_d3 : std_logic;
+  signal ap_rst_d4 : std_logic;
+  signal ap_rst_d5 : std_logic;
 
   signal ap_clk_unp   : std_logic;
   signal ap_rst_unp   : std_logic;
@@ -336,32 +200,42 @@ architecture rtl of algo_top_wrapper is
   signal ap_done_unp  : std_logic;
   signal ap_idle_unp  : std_logic;
   signal ap_ready_unp : std_logic;
+
+  signal link_in      : t_slv_192_arr(47 downto 0);
+  signal link_out     : t_slv_192_arr(47 downto 0);
   
-    signal ap_done_latched  : std_logic;
+  signal link_in_reg  : t_slv_192_arr(47 downto 0);
+  signal link_out_reg : t_slv_192_arr(47 downto 0);
 
-
-  signal link_in_0 : t_slv_64_arr(47 downto 0);
-  signal link_in_1 : t_slv_64_arr(47 downto 0);
-  signal link_in_2 : t_slv_64_arr(47 downto 0);
-
-  signal link_out_0 : t_slv_64_arr(47 downto 0);
-  signal link_out_1 : t_slv_64_arr(47 downto 0);
-  signal link_out_2 : t_slv_64_arr(47 downto 0);
+  signal link_out_ap_vld : std_logic_vector(47 downto 0);
+  signal link_out_ap_vld_latched : std_logic_vector(47 downto 0);
 
   signal in_cyc  : t_cyc_3_arr(47 downto 0);
   signal out_cyc : t_cyc_3_arr(47 downto 0);
 
 begin
 
-
+  ap_done <= ap_done_unp;
+  
+  process(ap_clk) is
+  begin
+       if rising_edge(ap_clk) then
+         ap_rst_d1 <= ap_rst;
+         ap_rst_d2 <= ap_rst_d1;
+         ap_rst_d3 <= ap_rst_d2;
+         ap_rst_d4 <= ap_rst_d3;
+         ap_rst_d5 <= ap_rst_d4;
+     end if;
+  end process;
+  
   gen_cyc : for idx in 0 to 47 generate
     process(ap_clk) is
     begin
       if rising_edge(ap_clk) then
 
-        ap_rst_d1 <= ap_rst;
-        ap_rst_d2 <= ap_rst_d1;
-        ap_rst_d3 <= ap_rst_d2;
+        if (link_out_ap_vld(idx) = '1') then
+          link_out_reg(idx) <= link_out(idx);
+        end if;
 
         if (ap_rst_d2 = '1') then
           in_cyc(idx) <= 0;
@@ -371,14 +245,14 @@ begin
             in_cyc(idx) <= 0;
           end if;
         end if;
-        
-        if (ap_rst_d2 = '1' ) then
-           ap_done_latched <= '0';
-        elsif (ap_done_unp = '1') then
-            ap_done_latched <= '1';
+
+        if (ap_rst = '1') then
+          link_out_ap_vld_latched(idx) <= '0';
+        elsif (link_out_ap_vld(idx) = '1') then
+          link_out_ap_vld_latched(idx) <= '1';
         end if;
 
-        if (ap_done_latched = '0') then
+        if (link_out_ap_vld_latched(idx) = '0') then
           out_cyc(idx)                <= 0;
           link_out_master(idx).tvalid <= '0';
         else
@@ -389,21 +263,31 @@ begin
           end if;
         end if;
 
-        if (in_cyc(idx) = 0) then link_in_0(idx) <= link_in_master(idx).tdata; end if;
-        if (in_cyc(idx) = 1) then link_in_1(idx) <= link_in_master(idx).tdata; end if;
-        if (in_cyc(idx) = 2) then link_in_2(idx) <= link_in_master(idx).tdata; end if;
+        if (in_cyc(idx) = 0) then 
+            link_in(idx)(63 downto 0)    <= link_in_master(idx).tdata; 
+        end if;
+        
+        if (in_cyc(idx) = 1) then 
+            link_in(idx)(127 downto 64)  <= link_in_master(idx).tdata; 
+        end if;
+        
+        if (in_cyc(idx) = 2) then 
+            link_in_reg(idx)(63 downto 0) <= link_in(idx)(63 downto 0);
+            link_in_reg(idx)(127 downto 64) <= link_in(idx)(127 downto 64);
+            link_in_reg(idx)(191 downto 128) <= link_in_master(idx).tdata; 
+        end if;
 
-        if (out_cyc(idx) = 0) then link_out_master(idx).tdata <= link_out_0(idx); end if;
-        if (out_cyc(idx) = 1) then link_out_master(idx).tdata <= link_out_1(idx); end if;
-        if (out_cyc(idx) = 2) then link_out_master(idx).tdata <= link_out_2(idx); end if;
+        if (out_cyc(idx) = 0) then link_out_master(idx).tdata <= link_out_reg(idx)(63 downto 0); end if;
+        if (out_cyc(idx) = 1) then link_out_master(idx).tdata <= link_out_reg(idx)(127 downto 64); end if;
+        if (out_cyc(idx) = 2) then link_out_master(idx).tdata <= link_out_reg(idx)(191 downto 128); end if;
 
       end if;
     end process;
   end generate;
 
   ap_clk_unp   <= ap_clk;
-  ap_rst_unp   <= ap_rst_d3;
-  ap_start_unp <= not ap_rst;
+  ap_rst_unp   <= ap_rst;
+  ap_start_unp <= not ap_rst_d5;
   ap_idle      <= ap_idle_unp;
   ap_ready     <= ap_ready_unp;
 
@@ -416,295 +300,153 @@ begin
       ap_idle  => ap_idle_unp,
       ap_ready => ap_ready_unp,
 
-      link_in_2d_0_0_V  => link_in_0(0),
-      link_in_2d_1_0_V  => link_in_0(1),
-      link_in_2d_2_0_V  => link_in_0(2),
-      link_in_2d_3_0_V  => link_in_0(3),
-      link_in_2d_4_0_V  => link_in_0(4),
-      link_in_2d_5_0_V  => link_in_0(5),
-      link_in_2d_6_0_V  => link_in_0(6),
-      link_in_2d_7_0_V  => link_in_0(7),
-      link_in_2d_8_0_V  => link_in_0(8),
-      link_in_2d_9_0_V  => link_in_0(9),
-      link_in_2d_10_0_V => link_in_0(10),
-      link_in_2d_11_0_V => link_in_0(11),
-      link_in_2d_12_0_V => link_in_0(12),
-      link_in_2d_13_0_V => link_in_0(13),
-      link_in_2d_14_0_V => link_in_0(14),
-      link_in_2d_15_0_V => link_in_0(15),
-      link_in_2d_16_0_V => link_in_0(16),
-      link_in_2d_17_0_V => link_in_0(17),
-      link_in_2d_18_0_V => link_in_0(18),
-      link_in_2d_19_0_V => link_in_0(19),
-      link_in_2d_20_0_V => link_in_0(20),
-      link_in_2d_21_0_V => link_in_0(21),
-      link_in_2d_22_0_V => link_in_0(22),
-      link_in_2d_23_0_V => link_in_0(23),
-      link_in_2d_24_0_V => link_in_0(24),
-      link_in_2d_25_0_V => link_in_0(25),
-      link_in_2d_26_0_V => link_in_0(26),
-      link_in_2d_27_0_V => link_in_0(27),
-      link_in_2d_28_0_V => link_in_0(28),
-      link_in_2d_29_0_V => link_in_0(29),
-      link_in_2d_30_0_V => link_in_0(30),
-      link_in_2d_31_0_V => link_in_0(31),
-      link_in_2d_32_0_V => link_in_0(32),
-      link_in_2d_33_0_V => link_in_0(33),
-      link_in_2d_34_0_V => link_in_0(34),
-      link_in_2d_35_0_V => link_in_0(35),
-      link_in_2d_36_0_V => link_in_0(36),
-      link_in_2d_37_0_V => link_in_0(37),
-      link_in_2d_38_0_V => link_in_0(38),
-      link_in_2d_39_0_V => link_in_0(39),
-      link_in_2d_40_0_V => link_in_0(40),
-      link_in_2d_41_0_V => link_in_0(41),
-      link_in_2d_42_0_V => link_in_0(42),
-      link_in_2d_43_0_V => link_in_0(43),
-      link_in_2d_44_0_V => link_in_0(44),
-      link_in_2d_45_0_V => link_in_0(45),
-      link_in_2d_46_0_V => link_in_0(46),
-      link_in_2d_47_0_V => link_in_0(47),
-      link_in_2d_0_1_V  => link_in_1(0),
-      link_in_2d_1_1_V  => link_in_1(1),
-      link_in_2d_2_1_V  => link_in_1(2),
-      link_in_2d_3_1_V  => link_in_1(3),
-      link_in_2d_4_1_V  => link_in_1(4),
-      link_in_2d_5_1_V  => link_in_1(5),
-      link_in_2d_6_1_V  => link_in_1(6),
-      link_in_2d_7_1_V  => link_in_1(7),
-      link_in_2d_8_1_V  => link_in_1(8),
-      link_in_2d_9_1_V  => link_in_1(9),
-      link_in_2d_10_1_V => link_in_1(10),
-      link_in_2d_11_1_V => link_in_1(11),
-      link_in_2d_12_1_V => link_in_1(12),
-      link_in_2d_13_1_V => link_in_1(13),
-      link_in_2d_14_1_V => link_in_1(14),
-      link_in_2d_15_1_V => link_in_1(15),
-      link_in_2d_16_1_V => link_in_1(16),
-      link_in_2d_17_1_V => link_in_1(17),
-      link_in_2d_18_1_V => link_in_1(18),
-      link_in_2d_19_1_V => link_in_1(19),
-      link_in_2d_20_1_V => link_in_1(20),
-      link_in_2d_21_1_V => link_in_1(21),
-      link_in_2d_22_1_V => link_in_1(22),
-      link_in_2d_23_1_V => link_in_1(23),
-      link_in_2d_24_1_V => link_in_1(24),
-      link_in_2d_25_1_V => link_in_1(25),
-      link_in_2d_26_1_V => link_in_1(26),
-      link_in_2d_27_1_V => link_in_1(27),
-      link_in_2d_28_1_V => link_in_1(28),
-      link_in_2d_29_1_V => link_in_1(29),
-      link_in_2d_30_1_V => link_in_1(30),
-      link_in_2d_31_1_V => link_in_1(31),
-      link_in_2d_32_1_V => link_in_1(32),
-      link_in_2d_33_1_V => link_in_1(33),
-      link_in_2d_34_1_V => link_in_1(34),
-      link_in_2d_35_1_V => link_in_1(35),
-      link_in_2d_36_1_V => link_in_1(36),
-      link_in_2d_37_1_V => link_in_1(37),
-      link_in_2d_38_1_V => link_in_1(38),
-      link_in_2d_39_1_V => link_in_1(39),
-      link_in_2d_40_1_V => link_in_1(40),
-      link_in_2d_41_1_V => link_in_1(41),
-      link_in_2d_42_1_V => link_in_1(42),
-      link_in_2d_43_1_V => link_in_1(43),
-      link_in_2d_44_1_V => link_in_1(44),
-      link_in_2d_45_1_V => link_in_1(45),
-      link_in_2d_46_1_V => link_in_1(46),
-      link_in_2d_47_1_V => link_in_1(47),
-      link_in_2d_0_2_V  => link_in_2(0),
-      link_in_2d_1_2_V  => link_in_2(1),
-      link_in_2d_2_2_V  => link_in_2(2),
-      link_in_2d_3_2_V  => link_in_2(3),
-      link_in_2d_4_2_V  => link_in_2(4),
-      link_in_2d_5_2_V  => link_in_2(5),
-      link_in_2d_6_2_V  => link_in_2(6),
-      link_in_2d_7_2_V  => link_in_2(7),
-      link_in_2d_8_2_V  => link_in_2(8),
-      link_in_2d_9_2_V  => link_in_2(9),
-      link_in_2d_10_2_V => link_in_2(10),
-      link_in_2d_11_2_V => link_in_2(11),
-      link_in_2d_12_2_V => link_in_2(12),
-      link_in_2d_13_2_V => link_in_2(13),
-      link_in_2d_14_2_V => link_in_2(14),
-      link_in_2d_15_2_V => link_in_2(15),
-      link_in_2d_16_2_V => link_in_2(16),
-      link_in_2d_17_2_V => link_in_2(17),
-      link_in_2d_18_2_V => link_in_2(18),
-      link_in_2d_19_2_V => link_in_2(19),
-      link_in_2d_20_2_V => link_in_2(20),
-      link_in_2d_21_2_V => link_in_2(21),
-      link_in_2d_22_2_V => link_in_2(22),
-      link_in_2d_23_2_V => link_in_2(23),
-      link_in_2d_24_2_V => link_in_2(24),
-      link_in_2d_25_2_V => link_in_2(25),
-      link_in_2d_26_2_V => link_in_2(26),
-      link_in_2d_27_2_V => link_in_2(27),
-      link_in_2d_28_2_V => link_in_2(28),
-      link_in_2d_29_2_V => link_in_2(29),
-      link_in_2d_30_2_V => link_in_2(30),
-      link_in_2d_31_2_V => link_in_2(31),
-      link_in_2d_32_2_V => link_in_2(32),
-      link_in_2d_33_2_V => link_in_2(33),
-      link_in_2d_34_2_V => link_in_2(34),
-      link_in_2d_35_2_V => link_in_2(35),
-      link_in_2d_36_2_V => link_in_2(36),
-      link_in_2d_37_2_V => link_in_2(37),
-      link_in_2d_38_2_V => link_in_2(38),
-      link_in_2d_39_2_V => link_in_2(39),
-      link_in_2d_40_2_V => link_in_2(40),
-      link_in_2d_41_2_V => link_in_2(41),
-      link_in_2d_42_2_V => link_in_2(42),
-      link_in_2d_43_2_V => link_in_2(43),
-      link_in_2d_44_2_V => link_in_2(44),
-      link_in_2d_45_2_V => link_in_2(45),
-      link_in_2d_46_2_V => link_in_2(46),
-      link_in_2d_47_2_V => link_in_2(47),
+      link_in_0_V  => link_in_reg(0),
+      link_in_1_V  => link_in_reg(1),
+      link_in_2_V  => link_in_reg(2),
+      link_in_3_V  => link_in_reg(3),
+      link_in_4_V  => link_in_reg(4),
+      link_in_5_V  => link_in_reg(5),
+      link_in_6_V  => link_in_reg(6),
+      link_in_7_V  => link_in_reg(7),
+      link_in_8_V  => link_in_reg(8),
+      link_in_9_V  => link_in_reg(9),
+      link_in_10_V => link_in_reg(10),
+      link_in_11_V => link_in_reg(11),
+      link_in_12_V => link_in_reg(12),
+      link_in_13_V => link_in_reg(13),
+      link_in_14_V => link_in_reg(14),
+      link_in_15_V => link_in_reg(15),
+      link_in_16_V => link_in_reg(16),
+      link_in_17_V => link_in_reg(17),
+      link_in_18_V => link_in_reg(18),
+      link_in_19_V => link_in_reg(19),
+      link_in_20_V => link_in_reg(20),
+      link_in_21_V => link_in_reg(21),
+      link_in_22_V => link_in_reg(22),
+      link_in_23_V => link_in_reg(23),
+      link_in_24_V => link_in_reg(24),
+      link_in_25_V => link_in_reg(25),
+      link_in_26_V => link_in_reg(26),
+      link_in_27_V => link_in_reg(27),
+      link_in_28_V => link_in_reg(28),
+      link_in_29_V => link_in_reg(29),
+      link_in_30_V => link_in_reg(30),
+      link_in_31_V => link_in_reg(31),
+      link_in_32_V => link_in_reg(32),
+      link_in_33_V => link_in_reg(33),
+      link_in_34_V => link_in_reg(34),
+      link_in_35_V => link_in_reg(35),
+      link_in_36_V => link_in_reg(36),
+      link_in_37_V => link_in_reg(37),
+      link_in_38_V => link_in_reg(38),
+      link_in_39_V => link_in_reg(39),
+      link_in_40_V => link_in_reg(40),
+      link_in_41_V => link_in_reg(41),
+      link_in_42_V => link_in_reg(42),
+      link_in_43_V => link_in_reg(43),
+      link_in_44_V => link_in_reg(44),
+      link_in_45_V => link_in_reg(45),
+      link_in_46_V => link_in_reg(46),
+      link_in_47_V => link_in_reg(47),
 
-      link_out_2d_0_0_V  => link_out_0(0),
-      link_out_2d_1_0_V  => link_out_0(1),
-      link_out_2d_2_0_V  => link_out_0(2),
-      link_out_2d_3_0_V  => link_out_0(3),
-      link_out_2d_4_0_V  => link_out_0(4),
-      link_out_2d_5_0_V  => link_out_0(5),
-      link_out_2d_6_0_V  => link_out_0(6),
-      link_out_2d_7_0_V  => link_out_0(7),
-      link_out_2d_8_0_V  => link_out_0(8),
-      link_out_2d_9_0_V  => link_out_0(9),
-      link_out_2d_10_0_V => link_out_0(10),
-      link_out_2d_11_0_V => link_out_0(11),
-      link_out_2d_12_0_V => link_out_0(12),
-      link_out_2d_13_0_V => link_out_0(13),
-      link_out_2d_14_0_V => link_out_0(14),
-      link_out_2d_15_0_V => link_out_0(15),
-      link_out_2d_16_0_V => link_out_0(16),
-      link_out_2d_17_0_V => link_out_0(17),
-      link_out_2d_18_0_V => link_out_0(18),
-      link_out_2d_19_0_V => link_out_0(19),
-      link_out_2d_20_0_V => link_out_0(20),
-      link_out_2d_21_0_V => link_out_0(21),
-      link_out_2d_22_0_V => link_out_0(22),
-      link_out_2d_23_0_V => link_out_0(23),
-      link_out_2d_24_0_V => link_out_0(24),
-      link_out_2d_25_0_V => link_out_0(25),
-      link_out_2d_26_0_V => link_out_0(26),
-      link_out_2d_27_0_V => link_out_0(27),
-      link_out_2d_28_0_V => link_out_0(28),
-      link_out_2d_29_0_V => link_out_0(29),
-      link_out_2d_30_0_V => link_out_0(30),
-      link_out_2d_31_0_V => link_out_0(31),
-      link_out_2d_32_0_V => link_out_0(32),
-      link_out_2d_33_0_V => link_out_0(33),
-      link_out_2d_34_0_V => link_out_0(34),
-      link_out_2d_35_0_V => link_out_0(35),
-      link_out_2d_36_0_V => link_out_0(36),
-      link_out_2d_37_0_V => link_out_0(37),
-      link_out_2d_38_0_V => link_out_0(38),
-      link_out_2d_39_0_V => link_out_0(39),
-      link_out_2d_40_0_V => link_out_0(40),
-      link_out_2d_41_0_V => link_out_0(41),
-      link_out_2d_42_0_V => link_out_0(42),
-      link_out_2d_43_0_V => link_out_0(43),
-      link_out_2d_44_0_V => link_out_0(44),
-      link_out_2d_45_0_V => link_out_0(45),
-      link_out_2d_46_0_V => link_out_0(46),
-      link_out_2d_47_0_V => link_out_0(47),
-      link_out_2d_0_1_V  => link_out_1(0),
-      link_out_2d_1_1_V  => link_out_1(1),
-      link_out_2d_2_1_V  => link_out_1(2),
-      link_out_2d_3_1_V  => link_out_1(3),
-      link_out_2d_4_1_V  => link_out_1(4),
-      link_out_2d_5_1_V  => link_out_1(5),
-      link_out_2d_6_1_V  => link_out_1(6),
-      link_out_2d_7_1_V  => link_out_1(7),
-      link_out_2d_8_1_V  => link_out_1(8),
-      link_out_2d_9_1_V  => link_out_1(9),
-      link_out_2d_10_1_V => link_out_1(10),
-      link_out_2d_11_1_V => link_out_1(11),
-      link_out_2d_12_1_V => link_out_1(12),
-      link_out_2d_13_1_V => link_out_1(13),
-      link_out_2d_14_1_V => link_out_1(14),
-      link_out_2d_15_1_V => link_out_1(15),
-      link_out_2d_16_1_V => link_out_1(16),
-      link_out_2d_17_1_V => link_out_1(17),
-      link_out_2d_18_1_V => link_out_1(18),
-      link_out_2d_19_1_V => link_out_1(19),
-      link_out_2d_20_1_V => link_out_1(20),
-      link_out_2d_21_1_V => link_out_1(21),
-      link_out_2d_22_1_V => link_out_1(22),
-      link_out_2d_23_1_V => link_out_1(23),
-      link_out_2d_24_1_V => link_out_1(24),
-      link_out_2d_25_1_V => link_out_1(25),
-      link_out_2d_26_1_V => link_out_1(26),
-      link_out_2d_27_1_V => link_out_1(27),
-      link_out_2d_28_1_V => link_out_1(28),
-      link_out_2d_29_1_V => link_out_1(29),
-      link_out_2d_30_1_V => link_out_1(30),
-      link_out_2d_31_1_V => link_out_1(31),
-      link_out_2d_32_1_V => link_out_1(32),
-      link_out_2d_33_1_V => link_out_1(33),
-      link_out_2d_34_1_V => link_out_1(34),
-      link_out_2d_35_1_V => link_out_1(35),
-      link_out_2d_36_1_V => link_out_1(36),
-      link_out_2d_37_1_V => link_out_1(37),
-      link_out_2d_38_1_V => link_out_1(38),
-      link_out_2d_39_1_V => link_out_1(39),
-      link_out_2d_40_1_V => link_out_1(40),
-      link_out_2d_41_1_V => link_out_1(41),
-      link_out_2d_42_1_V => link_out_1(42),
-      link_out_2d_43_1_V => link_out_1(43),
-      link_out_2d_44_1_V => link_out_1(44),
-      link_out_2d_45_1_V => link_out_1(45),
-      link_out_2d_46_1_V => link_out_1(46),
-      link_out_2d_47_1_V => link_out_1(47),
-      link_out_2d_0_2_V  => link_out_2(0),
-      link_out_2d_1_2_V  => link_out_2(1),
-      link_out_2d_2_2_V  => link_out_2(2),
-      link_out_2d_3_2_V  => link_out_2(3),
-      link_out_2d_4_2_V  => link_out_2(4),
-      link_out_2d_5_2_V  => link_out_2(5),
-      link_out_2d_6_2_V  => link_out_2(6),
-      link_out_2d_7_2_V  => link_out_2(7),
-      link_out_2d_8_2_V  => link_out_2(8),
-      link_out_2d_9_2_V  => link_out_2(9),
-      link_out_2d_10_2_V => link_out_2(10),
-      link_out_2d_11_2_V => link_out_2(11),
-      link_out_2d_12_2_V => link_out_2(12),
-      link_out_2d_13_2_V => link_out_2(13),
-      link_out_2d_14_2_V => link_out_2(14),
-      link_out_2d_15_2_V => link_out_2(15),
-      link_out_2d_16_2_V => link_out_2(16),
-      link_out_2d_17_2_V => link_out_2(17),
-      link_out_2d_18_2_V => link_out_2(18),
-      link_out_2d_19_2_V => link_out_2(19),
-      link_out_2d_20_2_V => link_out_2(20),
-      link_out_2d_21_2_V => link_out_2(21),
-      link_out_2d_22_2_V => link_out_2(22),
-      link_out_2d_23_2_V => link_out_2(23),
-      link_out_2d_24_2_V => link_out_2(24),
-      link_out_2d_25_2_V => link_out_2(25),
-      link_out_2d_26_2_V => link_out_2(26),
-      link_out_2d_27_2_V => link_out_2(27),
-      link_out_2d_28_2_V => link_out_2(28),
-      link_out_2d_29_2_V => link_out_2(29),
-      link_out_2d_30_2_V => link_out_2(30),
-      link_out_2d_31_2_V => link_out_2(31),
-      link_out_2d_32_2_V => link_out_2(32),
-      link_out_2d_33_2_V => link_out_2(33),
-      link_out_2d_34_2_V => link_out_2(34),
-      link_out_2d_35_2_V => link_out_2(35),
-      link_out_2d_36_2_V => link_out_2(36),
-      link_out_2d_37_2_V => link_out_2(37),
-      link_out_2d_38_2_V => link_out_2(38),
-      link_out_2d_39_2_V => link_out_2(39),
-      link_out_2d_40_2_V => link_out_2(40),
-      link_out_2d_41_2_V => link_out_2(41),
-      link_out_2d_42_2_V => link_out_2(42),
-      link_out_2d_43_2_V => link_out_2(43),
-      link_out_2d_44_2_V => link_out_2(44),
-      link_out_2d_45_2_V => link_out_2(45),
-      link_out_2d_46_2_V => link_out_2(46),
-      link_out_2d_47_2_V => link_out_2(47)
+      link_out_0_V  => link_out(0),
+      link_out_1_V  => link_out(1),
+      link_out_2_V  => link_out(2),
+      link_out_3_V  => link_out(3),
+      link_out_4_V  => link_out(4),
+      link_out_5_V  => link_out(5),
+      link_out_6_V  => link_out(6),
+      link_out_7_V  => link_out(7),
+      link_out_8_V  => link_out(8),
+      link_out_9_V  => link_out(9),
+      link_out_10_V => link_out(10),
+      link_out_11_V => link_out(11),
+      link_out_12_V => link_out(12),
+      link_out_13_V => link_out(13),
+      link_out_14_V => link_out(14),
+      link_out_15_V => link_out(15),
+      link_out_16_V => link_out(16),
+      link_out_17_V => link_out(17),
+      link_out_18_V => link_out(18),
+      link_out_19_V => link_out(19),
+      link_out_20_V => link_out(20),
+      link_out_21_V => link_out(21),
+      link_out_22_V => link_out(22),
+      link_out_23_V => link_out(23),
+      link_out_24_V => link_out(24),
+      link_out_25_V => link_out(25),
+      link_out_26_V => link_out(26),
+      link_out_27_V => link_out(27),
+      link_out_28_V => link_out(28),
+      link_out_29_V => link_out(29),
+      link_out_30_V => link_out(30),
+      link_out_31_V => link_out(31),
+      link_out_32_V => link_out(32),
+      link_out_33_V => link_out(33),
+      link_out_34_V => link_out(34),
+      link_out_35_V => link_out(35),
+      link_out_36_V => link_out(36),
+      link_out_37_V => link_out(37),
+      link_out_38_V => link_out(38),
+      link_out_39_V => link_out(39),
+      link_out_40_V => link_out(40),
+      link_out_41_V => link_out(41),
+      link_out_42_V => link_out(42),
+      link_out_43_V => link_out(43),
+      link_out_44_V => link_out(44),
+      link_out_45_V => link_out(45),
+      link_out_46_V => link_out(46),
+      link_out_47_V => link_out(47),
+
+
+      link_out_0_V_ap_vld  => link_out_ap_vld(0),
+      link_out_1_V_ap_vld  => link_out_ap_vld(1),
+      link_out_2_V_ap_vld  => link_out_ap_vld(2),
+      link_out_3_V_ap_vld  => link_out_ap_vld(3),
+      link_out_4_V_ap_vld  => link_out_ap_vld(4),
+      link_out_5_V_ap_vld  => link_out_ap_vld(5),
+      link_out_6_V_ap_vld  => link_out_ap_vld(6),
+      link_out_7_V_ap_vld  => link_out_ap_vld(7),
+      link_out_8_V_ap_vld  => link_out_ap_vld(8),
+      link_out_9_V_ap_vld  => link_out_ap_vld(9),
+      link_out_10_V_ap_vld => link_out_ap_vld(10),
+      link_out_11_V_ap_vld => link_out_ap_vld(11),
+      link_out_12_V_ap_vld => link_out_ap_vld(12),
+      link_out_13_V_ap_vld => link_out_ap_vld(13),
+      link_out_14_V_ap_vld => link_out_ap_vld(14),
+      link_out_15_V_ap_vld => link_out_ap_vld(15),
+      link_out_16_V_ap_vld => link_out_ap_vld(16),
+      link_out_17_V_ap_vld => link_out_ap_vld(17),
+      link_out_18_V_ap_vld => link_out_ap_vld(18),
+      link_out_19_V_ap_vld => link_out_ap_vld(19),
+      link_out_20_V_ap_vld => link_out_ap_vld(20),
+      link_out_21_V_ap_vld => link_out_ap_vld(21),
+      link_out_22_V_ap_vld => link_out_ap_vld(22),
+      link_out_23_V_ap_vld => link_out_ap_vld(23),
+      link_out_24_V_ap_vld => link_out_ap_vld(24),
+      link_out_25_V_ap_vld => link_out_ap_vld(25),
+      link_out_26_V_ap_vld => link_out_ap_vld(26),
+      link_out_27_V_ap_vld => link_out_ap_vld(27),
+      link_out_28_V_ap_vld => link_out_ap_vld(28),
+      link_out_29_V_ap_vld => link_out_ap_vld(29),
+      link_out_30_V_ap_vld => link_out_ap_vld(30),
+      link_out_31_V_ap_vld => link_out_ap_vld(31),
+      link_out_32_V_ap_vld => link_out_ap_vld(32),
+      link_out_33_V_ap_vld => link_out_ap_vld(33),
+      link_out_34_V_ap_vld => link_out_ap_vld(34),
+      link_out_35_V_ap_vld => link_out_ap_vld(35),
+      link_out_36_V_ap_vld => link_out_ap_vld(36),
+      link_out_37_V_ap_vld => link_out_ap_vld(37),
+      link_out_38_V_ap_vld => link_out_ap_vld(38),
+      link_out_39_V_ap_vld => link_out_ap_vld(39),
+      link_out_40_V_ap_vld => link_out_ap_vld(40),
+      link_out_41_V_ap_vld => link_out_ap_vld(41),
+      link_out_42_V_ap_vld => link_out_ap_vld(42),
+      link_out_43_V_ap_vld => link_out_ap_vld(43),
+      link_out_44_V_ap_vld => link_out_ap_vld(44),
+      link_out_45_V_ap_vld => link_out_ap_vld(45),
+      link_out_46_V_ap_vld => link_out_ap_vld(46),
+      link_out_47_V_ap_vld => link_out_ap_vld(47)
 
       );
 
