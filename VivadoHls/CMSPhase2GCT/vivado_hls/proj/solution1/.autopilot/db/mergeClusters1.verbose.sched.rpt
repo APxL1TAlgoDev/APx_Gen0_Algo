@@ -1,0 +1,129 @@
+
+
+================================================================
+== Vivado HLS Report for 'mergeClusters1'
+================================================================
+* Date:           Mon Jan 21 16:13:35 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        proj
+* Solution:       solution1
+* Product family: virtex7
+* Target device:  xc7vx690tffg1927-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.33|     1.783|        1.04|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    0|    0|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.78>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%icet2_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %icet2)"   --->   Operation 2 'read' 'icet2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%iphi2_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %iphi2)"   --->   Operation 3 'read' 'iphi2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%ieta2_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %ieta2)"   --->   Operation 4 'read' 'ieta2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%icet1_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %icet1)"   --->   Operation 5 'read' 'icet1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%iphi1_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %iphi1)"   --->   Operation 6 'read' 'iphi1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%iphi2_cast2 = zext i3 %iphi2_read to i16"   --->   Operation 7 'zext' 'iphi2_cast2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ieta2_cast = zext i3 %ieta2_read to i16"   --->   Operation 8 'zext' 'ieta2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 3, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [src/GCT.cc:405]   --->   Operation 9 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.67ns)   --->   "%tmp = icmp eq i3 %iphi1_read, %iphi2_read" [src/GCT.cc:407]   --->   Operation 10 'icmp' 'tmp' <Predicate = true> <Delay = 0.67> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (1.18ns)   --->   "%tmp_s = icmp ugt i16 %icet1_read, %icet2_read" [src/GCT.cc:408]   --->   Operation 11 'icmp' 'tmp_s' <Predicate = (tmp)> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (1.30ns)   --->   "%tmp_1 = add i16 %icet2_read, %icet1_read" [src/GCT.cc:412]   --->   Operation 12 'add' 'tmp_1' <Predicate = (!tmp_s & tmp)> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node cet2_write_assign)   --->   "%p_tmp_s = select i1 %tmp_s, i16 0, i16 %tmp_1" [src/GCT.cc:408]   --->   Operation 13 'select' 'p_tmp_s' <Predicate = (tmp)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.47ns) (out node of the LUT)   --->   "%cet2_write_assign = select i1 %tmp, i16 %p_tmp_s, i16 %icet2_read" [src/GCT.cc:402]   --->   Operation 14 'select' 'cet2_write_assign' <Predicate = true> <Delay = 0.47> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%newret1 = insertvalue { i16, i16, i16 } undef, i16 %ieta2_cast, 0"   --->   Operation 15 'insertvalue' 'newret1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%newret3 = insertvalue { i16, i16, i16 } %newret1, i16 %iphi2_cast2, 1"   --->   Operation 16 'insertvalue' 'newret3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%newret5 = insertvalue { i16, i16, i16 } %newret3, i16 %cet2_write_assign, 2" [src/GCT.cc:402]   --->   Operation 17 'insertvalue' 'newret5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "ret { i16, i16, i16 } %newret5" [src/GCT.cc:402]   --->   Operation 18 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8.33ns, clock uncertainty: 1.04ns.
+
+ <State 1>: 1.78ns
+The critical path consists of the following:
+	wire read on port 'icet2' [6]  (0 ns)
+	'add' operation ('tmp_1', src/GCT.cc:412) [16]  (1.31 ns)
+	'select' operation ('p_tmp_s', src/GCT.cc:408) [17]  (0 ns)
+	'select' operation ('cet2', src/GCT.cc:402) [18]  (0.474 ns)
+	'insertvalue' operation ('newret5', src/GCT.cc:402) [21]  (0 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,32 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="proj"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7vx690t:ffg1927:-2"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/virtex7/virtex7" name="DefaultPlatform"/>
+        <library value="xilinx/virtex7/virtex7_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="120MHz" default="false"/>
+    </clockList>
+    <config>
+        <schedule model="algo_unpacked"/>
+    </config>
+    <Simulation argv="test1">
+        <SimFlow name="cosim" setup="false" dumpTrace="all" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" reduce_diskspace="false" toolName="auto">
+            <Rtl name="systemc" active="false"/>
+            <Rtl name="verilog" active="true"/>
+            <Rtl name="vhdl" active="false"/>
+        </SimFlow>
+    </Simulation>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="HLS Algorithm IP" vendor="cern-cms" library="hls" ipname="" version="1.0" driver_input_dir="" display_name="HLS Algorithm IP" taxonomy=""/>
+    </ExportDesign>
+</AutoPilot:solution>
+

@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"algo_unpacked": {
+			"proto_instances": {
+			}
+		}
+	}
+}

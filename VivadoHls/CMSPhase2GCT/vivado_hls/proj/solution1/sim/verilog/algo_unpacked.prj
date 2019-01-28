@@ -1,0 +1,9 @@
+sv work "glbl.v"
+sv xil_defaultlib "merge_acrossphi.v"
+sv xil_defaultlib "GCT.v"
+sv xil_defaultlib "mergeClusters1.v"
+sv xil_defaultlib "algo_unpacked.autotb.v"
+sv xil_defaultlib "algo_unpacked_muxbkb.v"
+sv xil_defaultlib "algo_unpacked.v"
+sv xil_defaultlib "mergeClusters.v"
+

@@ -1,0 +1,376 @@
+<stg><name>mergeClusters1</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+_ifconv:0  %icet2_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %icet2)
+
+]]></Node>
+<StgValue><ssdm name="icet2_read"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:1  %iphi2_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %iphi2)
+
+]]></Node>
+<StgValue><ssdm name="iphi2_read"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:2  %ieta2_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %ieta2)
+
+]]></Node>
+<StgValue><ssdm name="ieta2_read"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+_ifconv:3  %icet1_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %icet1)
+
+]]></Node>
+<StgValue><ssdm name="icet1_read"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:4  %iphi1_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %iphi1)
+
+]]></Node>
+<StgValue><ssdm name="iphi1_read"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="16" op_0_bw="3">
+<![CDATA[
+_ifconv:5  %iphi2_cast2 = zext i3 %iphi2_read to i16
+
+]]></Node>
+<StgValue><ssdm name="iphi2_cast2"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="16" op_0_bw="3">
+<![CDATA[
+_ifconv:6  %ieta2_cast = zext i3 %ieta2_read to i16
+
+]]></Node>
+<StgValue><ssdm name="ieta2_cast"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+_ifconv:7  call void (...)* @_ssdm_op_SpecPipeline(i32 3, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+_ifconv:8  %tmp = icmp eq i3 %iphi1_read, %iphi2_read
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="1" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+_ifconv:9  %tmp_s = icmp ugt i16 %icet1_read, %icet2_read
+
+]]></Node>
+<StgValue><ssdm name="tmp_s"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp><literal name="tmp_s" val="0"/>
+<literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+_ifconv:10  %tmp_1 = add i16 %icet2_read, %icet1_read
+
+]]></Node>
+<StgValue><ssdm name="tmp_1"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="16" op_0_bw="1" op_1_bw="16" op_2_bw="16">
+<![CDATA[
+_ifconv:11  %p_tmp_s = select i1 %tmp_s, i16 0, i16 %tmp_1
+
+]]></Node>
+<StgValue><ssdm name="p_tmp_s"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="16" op_0_bw="1" op_1_bw="16" op_2_bw="16">
+<![CDATA[
+_ifconv:12  %cet2_write_assign = select i1 %tmp, i16 %p_tmp_s, i16 %icet2_read
+
+]]></Node>
+<StgValue><ssdm name="cet2_write_assign"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="48" op_0_bw="48" op_1_bw="16">
+<![CDATA[
+_ifconv:13  %newret1 = insertvalue { i16, i16, i16 } undef, i16 %ieta2_cast, 0
+
+]]></Node>
+<StgValue><ssdm name="newret1"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="48" op_0_bw="48" op_1_bw="16">
+<![CDATA[
+_ifconv:14  %newret3 = insertvalue { i16, i16, i16 } %newret1, i16 %iphi2_cast2, 1
+
+]]></Node>
+<StgValue><ssdm name="newret3"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="48" op_0_bw="48" op_1_bw="16">
+<![CDATA[
+_ifconv:15  %newret5 = insertvalue { i16, i16, i16 } %newret3, i16 %cet2_write_assign, 2
+
+]]></Node>
+<StgValue><ssdm name="newret5"/></StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="0" op_0_bw="48">
+<![CDATA[
+_ifconv:16  ret { i16, i16, i16 } %newret5
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="20" name="iphi1" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="iphi1"/></StgValue>
+</port>
+<port id="21" name="icet1" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="icet1"/></StgValue>
+</port>
+<port id="22" name="ieta2" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="ieta2"/></StgValue>
+</port>
+<port id="23" name="iphi2" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="iphi2"/></StgValue>
+</port>
+<port id="24" name="icet2" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="icet2"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="26" from="_ssdm_op_Read.ap_auto.i16" to="icet2_read" fromId="25" toId="2">
+</dataflow>
+<dataflow id="27" from="icet2" to="icet2_read" fromId="24" toId="2">
+</dataflow>
+<dataflow id="29" from="_ssdm_op_Read.ap_auto.i3" to="iphi2_read" fromId="28" toId="3">
+</dataflow>
+<dataflow id="30" from="iphi2" to="iphi2_read" fromId="23" toId="3">
+</dataflow>
+<dataflow id="31" from="_ssdm_op_Read.ap_auto.i3" to="ieta2_read" fromId="28" toId="4">
+</dataflow>
+<dataflow id="32" from="ieta2" to="ieta2_read" fromId="22" toId="4">
+</dataflow>
+<dataflow id="33" from="_ssdm_op_Read.ap_auto.i16" to="icet1_read" fromId="25" toId="5">
+</dataflow>
+<dataflow id="34" from="icet1" to="icet1_read" fromId="21" toId="5">
+</dataflow>
+<dataflow id="35" from="_ssdm_op_Read.ap_auto.i3" to="iphi1_read" fromId="28" toId="6">
+</dataflow>
+<dataflow id="36" from="iphi1" to="iphi1_read" fromId="20" toId="6">
+</dataflow>
+<dataflow id="37" from="iphi2_read" to="iphi2_cast2" fromId="3" toId="7">
+</dataflow>
+<dataflow id="38" from="ieta2_read" to="ieta2_cast" fromId="4" toId="8">
+</dataflow>
+<dataflow id="40" from="_ssdm_op_SpecPipeline" to="StgValue_9" fromId="39" toId="9">
+</dataflow>
+<dataflow id="42" from="StgValue_41" to="StgValue_9" fromId="41" toId="9">
+</dataflow>
+<dataflow id="44" from="StgValue_43" to="StgValue_9" fromId="43" toId="9">
+</dataflow>
+<dataflow id="45" from="StgValue_43" to="StgValue_9" fromId="43" toId="9">
+</dataflow>
+<dataflow id="47" from="StgValue_46" to="StgValue_9" fromId="46" toId="9">
+</dataflow>
+<dataflow id="49" from="p_str" to="StgValue_9" fromId="48" toId="9">
+</dataflow>
+<dataflow id="50" from="iphi1_read" to="tmp" fromId="6" toId="10">
+</dataflow>
+<dataflow id="51" from="iphi2_read" to="tmp" fromId="3" toId="10">
+</dataflow>
+<dataflow id="52" from="icet1_read" to="tmp_s" fromId="5" toId="11">
+</dataflow>
+<dataflow id="53" from="icet2_read" to="tmp_s" fromId="2" toId="11">
+</dataflow>
+<dataflow id="54" from="icet2_read" to="tmp_1" fromId="2" toId="12">
+</dataflow>
+<dataflow id="55" from="icet1_read" to="tmp_1" fromId="5" toId="12">
+</dataflow>
+<dataflow id="56" from="tmp_s" to="p_tmp_s" fromId="11" toId="13">
+</dataflow>
+<dataflow id="58" from="StgValue_57" to="p_tmp_s" fromId="57" toId="13">
+</dataflow>
+<dataflow id="59" from="tmp_1" to="p_tmp_s" fromId="12" toId="13">
+</dataflow>
+<dataflow id="60" from="tmp" to="cet2_write_assign" fromId="10" toId="14">
+</dataflow>
+<dataflow id="61" from="p_tmp_s" to="cet2_write_assign" fromId="13" toId="14">
+</dataflow>
+<dataflow id="62" from="icet2_read" to="cet2_write_assign" fromId="2" toId="14">
+</dataflow>
+<dataflow id="64" from="StgValue_63" to="newret1" fromId="63" toId="15">
+</dataflow>
+<dataflow id="65" from="ieta2_cast" to="newret1" fromId="8" toId="15">
+</dataflow>
+<dataflow id="66" from="newret1" to="newret3" fromId="15" toId="16">
+</dataflow>
+<dataflow id="67" from="iphi2_cast2" to="newret3" fromId="7" toId="16">
+</dataflow>
+<dataflow id="68" from="newret3" to="newret5" fromId="16" toId="17">
+</dataflow>
+<dataflow id="69" from="cet2_write_assign" to="newret5" fromId="14" toId="17">
+</dataflow>
+<dataflow id="70" from="newret5" to="StgValue_18" fromId="17" toId="18">
+</dataflow>
+<dataflow id="71" from="tmp" to="StgValue_1" fromId="10" toId="1">
+</dataflow>
+<dataflow id="72" from="tmp_s" to="StgValue_1" fromId="11" toId="1">
+</dataflow>
+</dataflows>
+
+
+</stg>

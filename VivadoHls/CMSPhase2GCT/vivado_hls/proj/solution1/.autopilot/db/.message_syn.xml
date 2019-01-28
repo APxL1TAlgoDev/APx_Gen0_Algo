@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;src/GCT.cc&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from src/GCT.cc:1:
+In file included from src/GCT.cc:1:
+src/GCT.hh:3:17: warning: using directive refers to implicitly-defined namespace &apos;std&apos;
+using namespace std;
+                ^
+1 warning generated.\n"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;src/algo_unpacked.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 361.145 ; gain = 0.340 ; free physical = 8107 ; free virtual = 75538"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 361.145 ; gain = 0.340 ; free physical = 8107 ; free virtual = 75538"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 361.344 ; gain = 0.539 ; free physical = 7998 ; free virtual = 75431"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-23]" key="SYNCHK_VAR_INDEX_RANGE_359" tag="" content="src/algo_unpacked.cpp:91: variable-indexed range selection may cause suboptimal QoR."/>
+	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 361.344 ; gain = 0.539 ; free physical = 7972 ; free virtual = 75406"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;algo_unpacked&apos; (src/algo_unpacked.cpp:22)."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;GCT&apos; (src/GCT.cc:4)."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_250" tag="" content="Unrolling all loops for pipelining in function &apos;merge_acrossphi&apos; (src/GCT.cc:253)."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (src/algo_unpacked.cpp:73) in function &apos;algo_unpacked&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-2&apos; (src/algo_unpacked.cpp:78) in function &apos;algo_unpacked&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-2.1&apos; (src/algo_unpacked.cpp:80) in function &apos;algo_unpacked&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3&apos; (src/algo_unpacked.cpp:153) in function &apos;algo_unpacked&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3.1&apos; (src/algo_unpacked.cpp:155) in function &apos;algo_unpacked&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-4&apos; (src/algo_unpacked.cpp:196) in function &apos;algo_unpacked&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (src/GCT.cc:94) in function &apos;GCT&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1&apos; (src/GCT.cc:96) in function &apos;GCT&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (src/GCT.cc:294) in function &apos;merge_acrossphi&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1&apos; (src/GCT.cc:296) in function &apos;merge_acrossphi&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-2&apos; (src/GCT.cc:312) in function &apos;merge_acrossphi&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-2.1&apos; (src/GCT.cc:314) in function &apos;merge_acrossphi&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;link_in.V&apos; (src/algo_unpacked.cpp:22) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;link_out.V&apos; (src/algo_unpacked.cpp:22) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakEta_Pos&apos; (src/algo_unpacked.cpp:47) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakPhi_Pos&apos; (src/algo_unpacked.cpp:48) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerEta_Pos&apos; (src/algo_unpacked.cpp:49) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerPhi_Pos&apos; (src/algo_unpacked.cpp:50) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ClusterET_Pos&apos; (src/algo_unpacked.cpp:51) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakEta_Neg&apos; (src/algo_unpacked.cpp:53) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakPhi_Neg&apos; (src/algo_unpacked.cpp:54) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerEta_Neg&apos; (src/algo_unpacked.cpp:55) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerPhi_Neg&apos; (src/algo_unpacked.cpp:56) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ClusterET_Neg&apos; (src/algo_unpacked.cpp:57) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakEta_Pos&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakPhi_Pos&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerEta_Pos&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerPhi_Pos&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outClusterET_Pos&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakEta_Neg&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakPhi_Neg&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerEta_Neg&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerPhi_Neg&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outClusterET_Neg&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakEta&apos; (src/GCT.cc:75) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakPhi&apos; (src/GCT.cc:76) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergeclusterET&apos; (src/GCT.cc:77) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakEta_b&apos; (src/GCT.cc:79) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakPhi_b&apos; (src/GCT.cc:80) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergeclusterET_b&apos; (src/GCT.cc:81) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakEta&apos; (src/GCT.cc:281) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakPhi&apos; (src/GCT.cc:282) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergetowerEta&apos; (src/GCT.cc:283) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergetowerPhi&apos; (src/GCT.cc:284) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergeclusterET&apos; (src/GCT.cc:285) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakEta_Pos&apos; (src/algo_unpacked.cpp:47) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakPhi_Pos&apos; (src/algo_unpacked.cpp:48) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerEta_Pos&apos; (src/algo_unpacked.cpp:49) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerPhi_Pos&apos; (src/algo_unpacked.cpp:50) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ClusterET_Pos&apos; (src/algo_unpacked.cpp:51) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakEta_Neg&apos; (src/algo_unpacked.cpp:53) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;peakPhi_Neg&apos; (src/algo_unpacked.cpp:54) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerEta_Neg&apos; (src/algo_unpacked.cpp:55) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;towerPhi_Neg&apos; (src/algo_unpacked.cpp:56) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;ClusterET_Neg&apos; (src/algo_unpacked.cpp:57) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakEta_Pos&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakPhi_Pos&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerEta_Pos&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerPhi_Pos&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outClusterET_Pos&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakEta_Neg&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outpeakPhi_Neg&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerEta_Neg&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outtowerPhi_Neg&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;outClusterET_Neg&apos;  in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakEta&apos; (src/GCT.cc:75) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakPhi&apos; (src/GCT.cc:76) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergeclusterET&apos; (src/GCT.cc:77) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakEta_b&apos; (src/GCT.cc:79) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakPhi_b&apos; (src/GCT.cc:80) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergeclusterET_b&apos; (src/GCT.cc:81) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakEta&apos; (src/GCT.cc:281) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergepeakPhi&apos; (src/GCT.cc:282) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergetowerEta&apos; (src/GCT.cc:283) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergetowerPhi&apos; (src/GCT.cc:284) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;preMergeclusterET&apos; (src/GCT.cc:285) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 6 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 10 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 6 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 10 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 6 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 10 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (src/GCT.cc:327:10) to (src/GCT.cc:327:10) in function &apos;merge_acrossphi&apos;... converting 4 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock in function &apos;mergeClusters1&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock in function &apos;mergeClusters&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:01:13 ; elapsed = 00:01:16 . Memory (MB): peak = 553.020 ; gain = 192.215 ; free physical = 6890 ; free virtual = 74326"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:01:36 ; elapsed = 00:01:40 . Memory (MB): peak = 681.020 ; gain = 320.215 ; free physical = 7021 ; free virtual = 74155"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;algo_unpacked&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;mergeClusters&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;mergeClusters&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 3, Final II = 1, Depth = 1."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 100.7 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.07 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;merge_acrossphi&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;merge_acrossphi&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 3, Final II = 3, Depth = 3."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_76" tag="SDX,TIMING,SCHEDULE" content="Estimated clock period (7.86843ns) exceeds the target (target clock period: 8.33333ns, clock uncertainty: 1.04167ns, effective delay budget: 7.29167ns)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_74" tag="SDX" content="The critical path consists of the following:
+	&apos;call&apos; operation (&apos;call_ret_0_4&apos;, src/GCT.cc:327) to &apos;mergeClusters&apos; (2.71 ns)
+	&apos;mux&apos; operation (&apos;outpeakPhi432_1&apos;, src/GCT.cc:327) (1.72 ns)
+	multiplexor before &apos;phi&apos; operation (&apos;outpeakEta[0][2]&apos;, src/GCT.cc:327) with incoming values : (&apos;outpeakEta&apos;, src/GCT.cc:327) (0.871 ns)
+	&apos;phi&apos; operation (&apos;outpeakEta[0][2]&apos;, src/GCT.cc:327) with incoming values : (&apos;outpeakEta&apos;, src/GCT.cc:327) (0 ns)
+	&apos;mux&apos; operation (&apos;outpeakEta364_4&apos;, src/GCT.cc:327) (1.72 ns)
+	multiplexor before &apos;phi&apos; operation (&apos;outpeakEta[0][17]&apos;, src/GCT.cc:327) with incoming values : (&apos;outpeakEta&apos;, src/GCT.cc:327) (&apos;outpeakEta364_4&apos;, src/GCT.cc:327) (0.85 ns)
+	&apos;phi&apos; operation (&apos;outpeakEta[0][17]&apos;, src/GCT.cc:327) with incoming values : (&apos;outpeakEta&apos;, src/GCT.cc:327) (&apos;outpeakEta364_4&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_16&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_17&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_18&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_19&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_20&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_21&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_22&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_23&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_24&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_25&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_26&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_27&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_28&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_29&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_30&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_31&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_32&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_33&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_34&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_35&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_36&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_37&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_38&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_39&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_40&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_41&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_42&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_43&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_44&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_45&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_46&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_47&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_48&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_49&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_50&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_51&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_52&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_53&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_54&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_55&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_56&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_57&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_58&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_59&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_60&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_61&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_62&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_63&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_64&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_65&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_66&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_67&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_68&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_69&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_70&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_71&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_72&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_73&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_74&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_75&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_76&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_77&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_78&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_79&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_80&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_81&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_82&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_83&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_84&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_85&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_86&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_87&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_88&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_89&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_90&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_91&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_92&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_93&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_94&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_95&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_96&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_97&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_98&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_99&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_100&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_101&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_102&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_103&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_104&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_105&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_106&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_107&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_108&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_109&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_110&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_111&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_112&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_113&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_114&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_115&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_116&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_117&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_118&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_119&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_120&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_121&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_122&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_123&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_124&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_125&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_126&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_127&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_128&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_129&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_130&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_131&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_132&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_133&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_134&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_135&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_136&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_137&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_138&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_139&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_140&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_141&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_142&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_143&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_144&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_145&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_146&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_147&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_148&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_149&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_150&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_151&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_152&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_153&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_154&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_155&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_156&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_157&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_158&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_159&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_160&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_161&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_162&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_163&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_164&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_165&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_166&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_167&apos;, src/GCT.cc:327) (0 ns)
+	&apos;insertvalue&apos; operation (&apos;mrv_168&apos;, src/GCT.cc:327) (0 ns)"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 5.05 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.51 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;mergeClusters1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;mergeClusters1&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 3, Final II = 1, Depth = 1."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.28 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.09 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;GCT&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;GCT&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 3, Final II = 3, Depth = 4."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.52 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.89 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;algo_unpacked&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_46" tag="" content="Pipelining function &apos;algo_unpacked&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 3, Final II = 3, Depth = 4."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 4.52 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 2.7 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;mergeClusters&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;mergeClusters&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 3.87 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;merge_acrossphi&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;algo_unpacked_mux_325_16_1_1&apos; to &apos;algo_unpacked_muxbkb&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-104]" key="RTGEN_104_852" tag="" content="Estimated max fanout for &apos;merge_acrossphi&apos; is 5332 from HDL expression: (1&apos;b1 == ap_CS_fsm_state3)"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;algo_unpacked_muxbkb&apos;: 153 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;merge_acrossphi&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 8.94 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;mergeClusters1&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;mergeClusters1&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 4.26 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;GCT&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-104]" key="RTGEN_104_852" tag="" content="Estimated max fanout for &apos;GCT&apos; is 5760 from HDL expression: ((ap_enable_reg_pp0_iter1 == 1&apos;b1) &amp; (1&apos;b1 == ap_CS_fsm_pp0_stage0) &amp; (1&apos;b0 == ap_block_pp0_stage0_11001))"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;GCT&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 24.85 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;algo_unpacked&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_0_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_1_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_2_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_3_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_4_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_5_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_6_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_7_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_8_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_9_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_10_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_11_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_12_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_13_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_14_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_15_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_16_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_17_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_18_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_19_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_20_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_21_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_22_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_23_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_24_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_25_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_26_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_27_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_28_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_29_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_30_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_31_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_32_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_33_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_34_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_35_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_36_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_37_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_38_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_39_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_40_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_41_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_42_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_43_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_44_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_45_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_46_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_in_47_V&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_0_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_1_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_2_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_3_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_4_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_5_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_6_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_7_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_8_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_9_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_10_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_11_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_12_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_13_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_14_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_15_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_16_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_17_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_18_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_19_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_20_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_21_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_22_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_23_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_24_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_25_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_26_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_27_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_28_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_29_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_30_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_31_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_32_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_33_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_34_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_35_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_36_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_37_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_38_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_39_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_40_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_41_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_42_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_43_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_44_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_45_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_46_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;algo_unpacked/link_out_47_V&apos; to &apos;ap_vld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;algo_unpacked&apos; to &apos;ap_ctrl_hs&apos;."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;first&apos; is power-on initialization."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;algo_unpacked&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 13.29 seconds; current allocated memory: 0.284 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:02:50 ; elapsed = 00:03:06 . Memory (MB): peak = 1705.023 ; gain = 1344.219 ; free physical = 5420 ; free virtual = 72666"/>
+	<Message severity="INFO" prefix="[SYSC 207-301]" key="SYSC_301_1065" tag="" content="Generating SystemC RTL for algo_unpacked."/>
+	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for algo_unpacked."/>
+	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for algo_unpacked."/>
+</Messages>
