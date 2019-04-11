@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName algo_unpacked.cpp_pre.cpp.tb.cpp

@@ -1,5 +1,0 @@
-sv work "glbl.v"
-sv xil_defaultlib "algo_unpacked_mulbkb.v"
-sv xil_defaultlib "algo_unpacked.autotb.v"
-sv xil_defaultlib "algo_unpacked.v"
-
